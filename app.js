@@ -1,1 +1,1 @@
-import "./src/Main.ts";
+import "./src/hoge.ts";
