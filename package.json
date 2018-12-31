@@ -4,10 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "serve": "parcel index.html"
+    "serve": "parcel index.html",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' './app.ts'",
+    "lint:fix": "tslint -c tslint.json 'src/**/*.ts' './app.ts' --fix"
   },
   "devDependencies": {
     "parcel-bundler": "^1.10.3",
+    "tslint": "^5.12.0",
     "typescript": "^3.2.1"
   }
 }
