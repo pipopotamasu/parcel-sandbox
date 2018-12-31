@@ -1,1 +1,1 @@
-console.log('fuga')
+console.log("fuga");
