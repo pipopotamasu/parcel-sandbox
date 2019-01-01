@@ -4,7 +4,7 @@ frontend sandbox made by parcel
 # features
 - typescript
 - Vue.js(comming soon)
-- lint(comming soon)
+- lint
 - unit test(comming soon)
 
 # get started
