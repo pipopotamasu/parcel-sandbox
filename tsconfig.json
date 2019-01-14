@@ -1,28 +1,172 @@
+
 {
   "compilerOptions": {
-    "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "lib": ["es2018", "dom"],
-    "module": "es6",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "target": "es5",
-    "strict": true,
-    "baseUrl": ".",
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "noImplicitThis": true,
+    // コンパイルの対象にJSファイルも含める
     "allowJs": false,
+    // export defaultを使用していないモジュールのコンパイル時にエラーを出力しない
+    "allowSyntheticDefaultImports": false,
+    // 到達しないコードを許可する
+    "allowUnreachableCode": false,
+    // 未使用のラベルを許可する
+    "allowUnusedLabels": false,
+    // 各出力ファイルにuse strictを記述する
     "alwaysStrict": true,
+    // モジュールを読み込むときのベースとなるパスを指定する。hoge/fuga/piyo.tsと会った時、baseUrlをhoge/fugaにしておけばpiyoだけで読み込める
+    "baseUrl": ".",
+    // ようわからん、3系の新しい機能に関係するっぽい
+    "build": false,
+    // 入力ファイルの文字コード
+    "charset": "utf8",
+    // jsファイルのエラーをチェック
     "checkJs": false,
+    // TypeScriptで記述したファイルから型定義ファイルを生成
+    "declaration": false,
+    // declarationで生成されたファイルの出力先を設定
+    // "declarationDir": "types",
+    // 型定義ファイルのソースマップを出力する
+    "declarationMap": false,
+    // ビルド結果を表示する
+    "diagnostics": true,
+    // JSのサイズ上限をdisabledにする
+    "disableSizeLimit": false,
+    // targetがES5, ES3のときfor ofのダウングレードをする
+    "downlevelIteration": true,
+    // 出力ファイルの先頭にBOMをつける
+    "emitBOM": false,
+    // 型定義ファイルだけ出力する。型定義ファイルだけ欲しい時に使うのかな?
+    "emitDeclarationOnly": false,
+    // Decoratorのメタデータを出力する
+    "emitDecoratorMetadata": true,
+    // 出力ファイルのbabelと型システムとの互換性を保つ(おそらくTSで出力したファイルをbabelでトランスパイルする時に使う)
+    "esModuleInterop": false,
+    // Decoratorを使えるようにする
+    "experimentalDecorators": true,
+    // ビルド結果を詳細に表示する
+    "extendedDiagnostics": true,
+    // 大文字と小文字を区別して参照を解決する。windowsだとファイルパスの大文字小文字を区別しないため、linuxとの整合性を保つためのオプション
     "forceConsistentCasingInFileNames": true,
+    // tslibをヘルパーとして使用するように設定する、ようわからん
+    "importHelpers": false,
+    // 複数ソースマップが出力される場合、一つにまとめて出力する(認識間違ってるかも)
+    "inlineSourceMap": false,
+    // jsファイルとソースマップを同じファイルで出力する
+    "inlineSources": false,
+    // それぞれのファイルを分割モジュールとしてトランスパイルする。
+    "isolatedModules": false,
+    // jsx(.tsx)のサポート。
+    // preserve・・・babel等でさらに変換される前提でjsxのまま出力する.
+    // react・・・react用
+    // "jsx": "preserve",
+    // JSXファクトリーを指定する。React.createElement or h
+    // "jsxFactory": "React.createElement",
+    "keyofStringsOnly": false,
+    // プロジェクトに含めるAPI(というより機能・文法)を指定。トランスパイルしてくれるようになる。
+    "lib": ["es2018", "dom"],
+    // 生成されたファイル名を出力する
+    "listEmittedFiles": false,
+    // コンパイルしたファイル名を出力する
+    "listFiles": false,
+    // エラーメッセージの言語
+    "locale": "en",
+    // マップファイルの場所を指定
+    // "mapRoot": "logs/type_error/maps",
+    "maxNodeModuleJsDepth": 0,
+    // モジュールの方式。commonjs, es6, amd etc...
+    "module": "es6",
+    // モジュールの名前解決の方法。node or classic
+    // "moduleResolution": "classic",
+    // 改行コードの指定
+    "newLine": "LF",
+    // コンパイルしたコードを出力しない。
+    "noEmit": false,
+    // __extends のようなカスタムヘルパー関数を生成しない
+    "noEmitHelpers": false,
+    // コンパイルエラーになった場合、コードを出力しない
+    "noEmitOnError": false,
+    // エラーメッセージを省略しない
+    "noErrorTruncation": false,
+    // switch 文のフォールスルー(breakを省略した書き方)に対してエラーを報告しない
+    "noFallthroughCasesInSwitch": true,
+    // 暗黙のany型を許容しない
+    "noImplicitAny": true,
+    // 関数内のすべての経路で、返り値の型があっているかをチェック
     "noImplicitReturns": true,
-    "suppressImplicitAnyIndexErrors": true,
+    // thisに型を指定していない場合エラー
+    "noImplicitThis": true,
+    // use strictを出力に含めない
+    "noImplicitUseStrict": false,
+    // デフォルトの型定義ファイル(lib.d.ts)を使用しない。https://typescript-jp.gitbook.io/deep-dive/type-system/lib.d.ts
+    "noLib": false,
+    // triple slash の参照や import 対象のモジュールを追加しない(つまり、依存解決しない)
+    // https://www.typescriptlang.org/docs/handbook/module-resolution.html
+    "noResolve": false,
+    // Genericsの互換性チェックをしない
+    "noStrictGenericChecks": false,
+    // 未使用のローカル変数があった時にエラーをだす。
     "noUnusedLocals": true,
-    "allowSyntheticDefaultImports": true,
+    // 未使用の引数があった時にエラーをだす。
     "noUnusedParameters": true,
-    "allowUnreachableCode": false
+    // コンパイル後の出力ファイル先のdir
+    // "outDir": "dist",
+    // コンパイル後の出力ファイル名
+    // "outFile": "?",
+    // https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping
+    // "paths": {},
+    // コンパイル後の出力コードで、enumの宣言を消さない
+    "preserveConstEnums": false,
+    // モジュールの解決やキャッシュでシンボリックリンクの場所を基準にしない
+    "preserveSymlinks": false,
+    // watchモードにおいてコンソールをclearしない
+    "preserveWatchOutput": false,
+    // エラーとメッセージの色装飾をする
+    "pretty": true,
+    // tsconfig.jsonの場所を指定する
+    // "project": "path/to/tsconfig.json",
+    // reactはようわからん
+    // "reactNamespace": "React",
+    // コメントを出力しない
+    "removeComments": true,
+    // jsonをimportできるようにする
+    "resolveJsonModule": false,
+    // ルートディレクトリの指定
+    // "rootDir": "path/to/rootDir",
+    // ルートディレクトリの指定(複数)
+    // "rootDirs": ["path/to/rootDir1", "path/to/rootDir2"],
+    // コンパイルに使用した最終的なconfigを出力する
+    "showConfig": false,
+    // デフォルトライブラリの型宣言ファイル(lib.d.ts)の型チェックをスキップする
+    "skipDefaultLibCheck": false,
+    // 全てのライブラリの型宣言ファイルの型チェックをスキップする
+    "skipLibCheck": false,
+    // ソースマップを出力する
+    "sourceMap": true,
+    // ソースマップを出力するパスを指定する
+    // "sourceRoot": "path/to/sourceRoot",
+    // strictBindCallApply, strictFunctionTypes, strictPropertyInitialization, strictNullChecksをtrueにする
+    "strict": true,
+    // bind, call, applyのチェックを厳密にする
+    // "strictBindCallApply": true,
+    // 言葉で説明するのが難しい
+    // http://abcdef.gets.b6n.ch/entry/2017/11/01/101358
+    // "strictFunctionTypes": true,
+    // classのプロパティをconstructorで初期化しなければならない
+    // "strictPropertyInitialization": true,
+    // Nullチェックの厳密化
+    // "strictNullChecks": true,
+    // @internal JSDoc アノテーションがある場合に宣言を出力しない
+    "stripInternal": false,
+    // オブジェクトへの過剰なプロパティチェックを抑制する(どういうこっちゃ?)
+    "suppressExcessPropertyErrors": true,
+    // インデックスシグネチャが欠損したオブジェクトの noImplicitAny エラーを抑制する(どういうこっちゃ？)
+    "suppressImplicitAnyIndexErrors": true,
+    // 出力するECMASCRIPTのバージョン
+    "target": "es5",
+    // モジュール解決のログメッセージを出力する
+    "traceResolution": false,
+    // 型定義ファイルの場所の指定
+    // "types": ["path/to/typeFile1", "path/to/typeFile2"],
+    // 型定義ファイルのdirを指定
+    // "typeRoots": ["path/to/typesDir1", "path/to/typesDir2"]
   },
   "exclude": [
     "node_modules",
